@@ -1,0 +1,10 @@
+   .DS_Store
+   */.DS_Store
+   *.dmg
+   EOF
+   git init
+   git config user.name "Your Name"
+   git config user.email "pooria.prs88@gmail.com"
+   git add .
+   git commit -m "Initial commit"
+   EOF
