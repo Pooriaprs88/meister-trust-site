@@ -11036,6 +11036,24 @@ header.masthead .masthead-heading {
   line-height: 3.25rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 1rem;
+}
+
+/* Make heading smaller on mobile to fit "Workmanship" */
+@media (max-width: 767.98px) {
+  header.masthead .masthead-heading {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    padding: 0 0.5rem;
+  }
+  
+  header.masthead .masthead-subheading {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    padding: 0 0.5rem;
+  }
 }
 
 @media (min-width: 768px) {
