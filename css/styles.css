@@ -11264,15 +11264,22 @@ header.masthead .masthead-heading {
 }
 
 .certificate-media img,
-.certificate-media object {
+.certificate-media object,
+.certificate-media iframe {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.certificate-media object {
+.certificate-media object,
+.certificate-media iframe {
   min-height: 320px;
   border: none;
+  border-radius: 0.75rem;
+}
+
+.certificate-media iframe {
+  background: #f1f3f5;
 }
 
 .certificate-link {

@@ -261,60 +261,52 @@
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
                     <h3 class="section-subheading text-muted">Ready to work with a professional who delivers results? Get in touch for a consultation.</h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <!-- Contact Form - Using EmailJS for email delivery -->
+                <form id="contactForm">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required />
+                                <div class="invalid-feedback">A name is required.</div>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required />
+                                <div class="invalid-feedback">A valid email is required.</div>
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="Your Phone *" required />
+                                <div class="invalid-feedback">A phone number is required.</div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <textarea class="form-control" id="message" name="message" placeholder="Your Message *" required></textarea>
+                                <div class="invalid-feedback">A message is required.</div>
                             </div>
                         </div>
                     </div>
                     <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            <div class="fw-bolder">Thank you for your message!</div>
+                            <p>We've received your inquiry and will get back to you soon.</p>
                         </div>
                     </div>
                     <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message! Please try again or contact us directly at MeisterTrustServices@outlook.com</div>
+                    </div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">
+                            <span class="spinner-border spinner-border-sm d-none" id="submitSpinner" role="status" aria-hidden="true"></span>
+                            <span id="submitButtonText">Send Message</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -341,47 +333,47 @@
                         <div class="certificate-list">
                             <article class="certificate-item">
                                 <div class="certificate-media">
-                                    <img src="assets/Alex.jpg" alt="Journeyman Ticket 1987" loading="lazy" />
+                                    <img src="assets/Journeyman%20Ticket%20(1987).jpg" alt="Journeyman Ticket 1987" loading="lazy" />
                                 </div>
                                 <h5>Journeyman Ticket (1987)</h5>
                                 <p>Documented proof of journeyman qualification achieved in 1987, establishing advanced trade proficiency.</p>
-                                <a class="certificate-link" href="assets/Alex.jpg" target="_blank" rel="noopener">Open Certificate</a>
+                                <a class="certificate-link" href="assets/Journeyman%20Ticket%20(1987).jpg" target="_blank" rel="noopener">Open Certificate</a>
                             </article>
 
                             <article class="certificate-item">
                                 <div class="certificate-media">
-                                    <img src="assets/Meisterbrief.jpg" alt="Meisterbrief 1992" loading="lazy" />
+                                    <img src="assets/Meisterbrief%20(1992).jpg" alt="Meisterbrief 1992" loading="lazy" />
                                 </div>
                                 <h5>Meisterbrief (1992)</h5>
                                 <p>German Master Craftsman certificate confirming completion of master-level training and examinations.</p>
-                                <a class="certificate-link" href="assets/Meisterbrief.jpg" target="_blank" rel="noopener">Open Certificate</a>
+                                <a class="certificate-link" href="assets/Meisterbrief%20(1992).jpg" target="_blank" rel="noopener">Open Certificate</a>
                             </article>
 
                             <article class="certificate-item">
                                 <div class="certificate-media">
-                                    <img src="assets/National%20Construction%20Safety%20officer.jpg" alt="National Construction Safety Officer Certificate" loading="lazy" />
+                                    <img src="assets/National%20Construction%20Safety%20Officer%20(2014).jpg" alt="National Construction Safety Officer Certificate" loading="lazy" />
                                 </div>
                                 <h5>National Construction Safety Officer (2014)</h5>
                                 <p>Accreditation as an NCSO demonstrating advanced competency in construction safety leadership and compliance.</p>
-                                <a class="certificate-link" href="assets/National%20Construction%20Safety%20officer.jpg" target="_blank" rel="noopener">Open Certificate</a>
+                                <a class="certificate-link" href="assets/National%20Construction%20Safety%20Officer%20(2014).jpg" target="_blank" rel="noopener">Open Certificate</a>
                             </article>
 
                             <article class="certificate-item">
                                 <div class="certificate-media">
-                                    <img src="assets/pipefitter.jpg" alt="Red Seal Steamfitter / Pipefitter Certificate" loading="lazy" />
+                                    <img src="assets/Red%20Seal%20Steamfitter%20_%20Pipefitter%20(April%202018).jpg" alt="Red Seal Steamfitter / Pipefitter Certificate" loading="lazy" />
                                 </div>
                                 <h5>Red Seal Steamfitter / Pipefitter (April 2018)</h5>
                                 <p>Red Seal endorsement confirming national qualification as a steamfitter and pipefitter across Canada.</p>
-                                <a class="certificate-link" href="assets/pipefitter.jpg" target="_blank" rel="noopener">Open Certificate</a>
+                                <a class="certificate-link" href="assets/Red%20Seal%20Steamfitter%20_%20Pipefitter%20(April%202018).jpg" target="_blank" rel="noopener">Open Certificate</a>
                             </article>
 
                             <article class="certificate-item">
                                 <div class="certificate-media">
-                                    <img src="assets/Plumper.jpg" alt="Red Seal Plumber Certificate" loading="lazy" />
+                                    <img src="assets/Red%20Seal%20Plumber%20(March%202009).jpg" alt="Red Seal Plumber Certificate" loading="lazy" />
                                 </div>
                                 <h5>Red Seal Plumber (March 2009)</h5>
-                                <p>Red Seal endorsement for plumbing, verifying interprovincial certification and mastery of trade standards.</p>
-                                <a class="certificate-link" href="assets/Plumper.jpg" target="_blank" rel="noopener">Open Certificate</a>
+                                <p>Red Seal endorsement for plumbing, verifying interprovincial certification.</p>
+                                <a class="certificate-link" href="assets/Red%20Seal%20Plumber%20(March%202009).jpg" target="_blank" rel="noopener">Open Certificate</a>
                             </article>
                         </div>
                     </div>
@@ -393,12 +385,9 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- EmailJS SDK -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

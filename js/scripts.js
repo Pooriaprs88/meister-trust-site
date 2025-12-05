@@ -51,6 +51,78 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Initialize EmailJS
+    (function(){
+        emailjs.init("21b124UTdCjhoV9Cc");
+    })();
+
+    // Contact Form Submission Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const submitButton = document.getElementById('submitButton');
+            const submitButtonText = document.getElementById('submitButtonText');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const submitSuccessMessage = document.getElementById('submitSuccessMessage');
+            const submitErrorMessage = document.getElementById('submitErrorMessage');
+
+            // Hide previous messages
+            submitSuccessMessage.classList.add('d-none');
+            submitErrorMessage.classList.add('d-none');
+
+            // Validate form
+            if (!contactForm.checkValidity()) {
+                contactForm.classList.add('was-validated');
+                return;
+            }
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButtonText.textContent = 'Sending...';
+            submitSpinner.classList.remove('d-none');
+
+            // Prepare form data
+            const formData = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+                to_email: 'MeisterTrustServices@outlook.com'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_isid7ey', 'template_b78o8fd', formData)
+                .then(function() {
+                    // Success
+                    submitSuccessMessage.classList.remove('d-none');
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                    
+                    // Reset button state
+                    submitButton.disabled = false;
+                    submitButtonText.textContent = 'Send Message';
+                    submitSpinner.classList.add('d-none');
+
+                    // Scroll to success message
+                    submitSuccessMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, function(error) {
+                    // Error
+                    console.error('EmailJS error:', error);
+                    submitErrorMessage.classList.remove('d-none');
+                    
+                    // Reset button state
+                    submitButton.disabled = false;
+                    submitButtonText.textContent = 'Send Message';
+                    submitSpinner.classList.add('d-none');
+
+                    // Scroll to error message
+                    submitErrorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+        });
+    }
+
 });
 
 // Toggle service details visibility - make it globally accessible
