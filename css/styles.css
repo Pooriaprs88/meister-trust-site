@@ -10822,25 +10822,12 @@ textarea.form-control-lg {
 html {
   scroll-padding-top: 4.5rem;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-}
-
-/* Prevent horizontal overflow on mobile - Fix white space on right side */
-.container,
-.container-fluid,
-section,
-.page-section {
-  overflow-x: hidden;
-  max-width: 100vw;
-  box-sizing: border-box;
+  min-width: 320px;
 }
 
 img, video, iframe, embed, object {
@@ -10848,40 +10835,15 @@ img, video, iframe, embed, object {
   height: auto;
 }
 
-/* Ensure no element exceeds viewport width on mobile */
 @media (max-width: 767.98px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-  
   .container {
     padding-left: 15px;
     padding-right: 15px;
-    max-width: 100%;
   }
-  
-  /* Fix navbar on mobile */
-  .navbar,
-  #mainNav {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  /* Fix header/masthead on mobile */
+
   header.masthead {
-    max-width: 100vw;
-    overflow-x: hidden;
     background-size: cover;
     background-position: center center;
-  }
-  
-  /* Ensure all sections fit on mobile */
-  section,
-  .page-section {
-    max-width: 100vw;
-    overflow-x: hidden;
   }
 }
 
@@ -10967,6 +10929,13 @@ p {
 #mainNav .navbar-brand img {
   height: 1.5rem;
 }
+
+@media (max-width: 991.98px) {
+  #mainNav .navbar-brand img {
+    height: 2.25rem;
+  }
+}
+
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.95rem;
@@ -11030,6 +10999,15 @@ header.masthead .masthead-subheading {
   margin-bottom: 25px;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+header.masthead .masthead-subheading-secondary {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 header.masthead .masthead-heading {
   font-size: 3.25rem;
   font-weight: 700;
@@ -11054,6 +11032,10 @@ header.masthead .masthead-heading {
     line-height: 1.5rem;
     padding: 0 0.5rem;
   }
+  header.masthead .masthead-subheading-secondary {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11066,6 +11048,10 @@ header.masthead .masthead-heading {
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
+  }
+  header.masthead .masthead-subheading-secondary {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
   }
   header.masthead .masthead-heading {
     font-size: 4.5rem;
@@ -11260,13 +11246,18 @@ header.masthead .masthead-heading {
   }
   
   .timeline > li:last-child {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
-  
+
   /* Ensure timeline items without panels don't break layout */
   .timeline > li.timeline-inverted:last-child {
     min-height: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  /* Tighten the gap between timeline and bio on mobile */
+  #about .timeline + .row {
+    margin-top: 1rem !important;
   }
   
   /* Center the icon properly in timeline-image on mobile */
@@ -11365,6 +11356,30 @@ header.masthead .masthead-heading {
 
 .certificate-link:hover {
   color: #0a567d;
+}
+
+/* Timeline mobile-only panel: show name/title next to icon on mobile */
+.timeline-panel-mobile-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .timeline-panel-mobile-only {
+    display: block;
+  }
+
+  .bio-heading-desktop {
+    display: none !important;
+  }
+
+  #about .row > .col-lg-8.text-center {
+    text-align: left !important;
+  }
+}
+
+/* Hide the fa-circle background in timeline icons — .timeline-image already provides the circle */
+.timeline > li .timeline-image .fa-stack .fa-circle {
+  display: none;
 }
 
 /* Additional fix for timeline-image with fa-stack on all screen sizes */
@@ -11500,6 +11515,13 @@ section#contact {
   background-image: url("../assets/img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (max-width: 767px) {
+  section#contact .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 section#contact .section-heading {
   color: #fff;
@@ -11649,10 +11671,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: var(--bs-primary);
 }
 
-.service-details li i {
+.service-details li i,
+.service-details li svg {
   font-size: 1rem;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
   flex-shrink: 0;
+  min-width: 1em;
 }
 
 .service-details .service-detail-hidden {
@@ -11667,63 +11691,127 @@ section#contact form#contactForm :-ms-input-placeholder {
 /* Responsive Design */
 @media (max-width: 992px) {
   .service-item-enhanced {
-    padding: 2rem;
+    padding: 2rem 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
   }
-  
+
+  .service-item-enhanced:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .service-item-enhanced::before {
+    display: none;
+  }
+
+  .service-item-enhanced:hover {
+    box-shadow: none;
+    transform: none;
+    border-color: transparent;
+  }
+
+  .service-item-enhanced:hover .service-icon-wrapper .fa-stack {
+    transform: none;
+  }
+
+  .service-item-enhanced:hover .service-icon-wrapper .fa-stack .fa-circle {
+    filter: none;
+  }
+
+  .service-item-enhanced:hover .service-title-enhanced {
+    color: inherit;
+  }
+
+  .service-item-enhanced .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item-enhanced .flex-grow-1 {
+    text-align: left;
+  }
+
+  .service-item-enhanced .service-title-enhanced {
+    text-align: center;
+  }
+
+  .service-icon-wrapper {
+    margin-bottom: 1rem;
+    margin-right: 0 !important;
+    align-self: center;
+  }
+
   .service-icon-wrapper .fa-stack {
-    font-size: 3rem !important;
+    font-size: 2.25rem !important;
   }
-  
+
   .service-title-enhanced {
     font-size: 1.35rem;
+    text-align: center;
+  }
+
+  .service-intro {
+    text-align: left;
+  }
+
+  .service-details {
+    text-align: left;
+  }
+
+  .service-details li {
+    justify-content: flex-start;
+  }
+
+  .apds-list .apds-desc {
+    display: block;
+    font-weight: 300;
+    color: #6c757d;
+    margin-top: 0.15rem;
+  }
+
+  #expertise .fa-stack.fa-4x {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .btn-xl {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
   .service-item-enhanced {
-    padding: 1.75rem;
+    padding: 1.5rem 0;
   }
-  
-  .service-item-enhanced .d-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .service-icon-wrapper {
-    margin-bottom: 1.5rem;
-    margin-right: 0 !important;
-  }
-  
+
   .service-icon-wrapper .fa-stack {
-    font-size: 3.5rem !important;
+    font-size: 2rem !important;
   }
-  
+
   .service-title-enhanced {
     font-size: 1.25rem;
-    text-align: center;
   }
-  
-  .service-intro {
-    text-align: center;
-  }
-  
-  .service-details {
-    text-align: left;
-  }
-  
-  .service-details li {
-    justify-content: flex-start;
+
+  #expertise .fa-stack.fa-4x {
+    font-size: 2.25rem;
   }
 }
 
 @media (max-width: 576px) {
   .service-item-enhanced {
-    padding: 1.5rem;
+    padding: 1.25rem 0;
   }
-  
+
   .service-icon-wrapper .fa-stack {
-    font-size: 3rem !important;
+    font-size: 1.85rem !important;
   }
   
   .service-title-enhanced {
@@ -11882,5 +11970,120 @@ section#contact form#contactForm :-ms-input-placeholder {
   
   .service-description {
     font-size: 0.95rem;
+  }
+}
+
+/* === Small mobile (max-width: 479px) === */
+@media screen and (max-width: 479px) {
+  /* Hero / Masthead */
+  header.masthead {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+  }
+
+  header.masthead .masthead-heading {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    padding: 0 0.25rem;
+  }
+
+  header.masthead .masthead-subheading {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    padding: 0 0.25rem;
+  }
+
+  header.masthead .masthead-subheading-secondary {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Buttons */
+  .btn-xl {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* Section headings */
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .section-subheading {
+    font-size: 0.9rem;
+  }
+
+  /* Service cards (enhanced) */
+  .service-item-enhanced {
+    padding: 1rem 0;
+  }
+
+  .service-icon-wrapper .fa-stack {
+    font-size: 1.65rem !important;
+  }
+
+  .service-title-enhanced {
+    font-size: 1.1rem;
+  }
+
+  .service-intro {
+    font-size: 0.9rem;
+  }
+
+  .service-details li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+
+  /* Service cards (grid) */
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon i {
+    font-size: 1.25rem;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-description {
+    font-size: 0.85rem;
+  }
+
+  /* About section */
+  #about .lead,
+  #about p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Contact form */
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+  }
+
+  /* Navbar */
+  .navbar-brand img {
+    height: 40px;
+  }
+
+  /* General spacing */
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }

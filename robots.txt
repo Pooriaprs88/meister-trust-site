@@ -1,0 +1,12 @@
+# Robots.txt for Meister Trust Services
+# https://meistertrustservices.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://meistertrustservices.com/sitemap.xml
+
+# Disallow access to assets that don't need indexing
+Disallow: /js/
+Disallow: /css/
