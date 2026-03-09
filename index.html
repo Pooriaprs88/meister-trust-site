@@ -16,14 +16,14 @@
         <meta property="og:url" content="https://meistertrustservices.com/" />
         <meta property="og:title" content="Meister Trust Services - Professional Safety Inspections & Drone Solutions" />
         <meta property="og:description" content="Meister Trust Services - 40 years of industry expertise. Safety inspections, commissioning, drone solutions, workflow organization using the A-P-D-S system, and custom business software." />
-        <meta property="og:image" content="https://meistertrustservices.com/assets/og-image.jpg" />
+        <meta property="og:image" content="https://meistertrustservices.com/assets/header.jpeg" />
         <meta property="og:site_name" content="Meister Trust Services" />
         <meta property="og:locale" content="en_CA" />
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Meister Trust Services - Professional Safety Inspections & Drone Solutions" />
         <meta name="twitter:description" content="40 years of industry expertise. Safety inspections, commissioning, drone solutions, workflow organization, and custom business software. Pride, passion, and workmanship." />
-        <meta name="twitter:image" content="https://meistertrustservices.com/assets/og-image.jpg" />
+        <meta name="twitter:image" content="https://meistertrustservices.com/assets/header.jpeg" />
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/favicon.png" />
         <!-- Font Awesome icons (free version) - CSS instead of JS for better performance -->
@@ -32,8 +32,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Bootstrap CSS (from CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <!-- Custom theme CSS -->
+        <link href="css/styles.min.css" rel="stylesheet" />
         <!-- Structured Data (JSON-LD) -->
         <script type="application/ld+json">
         {
@@ -321,7 +323,7 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/circle-meister.jpg" alt="Meister - Master Craftsmanship" /></div>
+                        <div class="timeline-image"><picture><source srcset="assets/circle-meister.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="assets/circle-meister.jpg" alt="Meister - Master Craftsmanship" width="512" height="512" /></picture></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Why "Meister"?</h4>
@@ -331,7 +333,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/circle-trust-1.jpg" alt="Trust - Foundation of Partnership" /></div>
+                        <div class="timeline-image"><picture><source srcset="assets/circle-trust-1.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="assets/circle-trust-1.jpg" alt="Trust - Foundation of Partnership" width="513" height="512" /></picture></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Why "Trust"?</h4>
@@ -341,7 +343,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/circle-trust.jpg" alt="Service - Results That Matter" /></div>
+                        <div class="timeline-image"><picture><source srcset="assets/circle-trust.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="assets/circle-trust.jpg" alt="Service - Results That Matter" width="512" height="512" /></picture></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Why "Service"?</h4>
@@ -374,11 +376,17 @@
                         <p class="text-muted mb-3">My expertise lies in system completion, commissioning, and start-up within the oil and gas industry. I focus on construction safety, quality, and documentation — no shortcuts, no punches. Done means done.</p>
                         <p class="text-muted mb-3">Beyond the field, I bring decades of office organization experience to help businesses streamline their workflows. Together with our software experts, we build custom systems that bring order and efficiency to your operations — tailored to your industry.</p>
                         <p class="text-muted"><strong>Safety Record: Never a Lost Time Injury (LTI) since 1984 for myself or my crew members.</strong></p>
-                        <p class="text-muted font-italic mb-0">Learning never ends. Always room for improvement. All about teamwork and pride.</p>
-                        <div class="mt-4">
+                        <p class="text-muted fst-italic mb-0">Learning never ends. Always room for improvement. All about teamwork and pride.</p>
+                        <div class="mt-4 d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
                             <button class="btn btn-primary btn-xl text-uppercase" data-bs-toggle="modal" data-bs-target="#certificationsModal">
-                                View Certifications
+                                <i class="fas fa-award me-2"></i>View 5 Certifications
                             </button>
+                            <div class="d-flex gap-2 flex-wrap justify-content-center">
+                                <span class="badge px-3 py-2" style="font-size: 0.8rem; background-color: rgba(11,98,144,0.1); color: #0B6290;">Red Seal Plumber</span>
+                                <span class="badge px-3 py-2" style="font-size: 0.8rem; background-color: rgba(11,98,144,0.1); color: #0B6290;">Red Seal Pipefitter</span>
+                                <span class="badge px-3 py-2" style="font-size: 0.8rem; background-color: rgba(11,98,144,0.1); color: #0B6290;">NCSO</span>
+                                <span class="badge px-3 py-2" style="font-size: 0.8rem; background-color: rgba(11,98,144,0.1); color: #0B6290;">Meisterbrief</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -443,6 +451,7 @@
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
                     <h3 class="section-subheading text-muted">Ready to work with a professional who delivers results? Get in touch for a consultation.</h3>
+                    <p class="mb-5"><a class="text-white text-decoration-none" href="mailto:MeisterTrustServices@outlook.com"><i class="fas fa-envelope me-2"></i>MeisterTrustServices@outlook.com</a></p>
                 </div>
                 <!-- Contact Form - Using EmailJS for email delivery -->
                 <form id="contactForm">
@@ -499,12 +508,38 @@
         </section>
         </main>
         <!-- Footer-->
-        <footer class="footer py-4">
+        <footer class="footer py-5">
             <div class="container">
+                <div class="row">
+                    <!-- Brand & Tagline -->
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="assets/logo horizontal white@2x.png" alt="Meister Trust Services" style="height: 1.75rem; margin-bottom: 1rem; filter: brightness(0.85);" />
+                        <p class="text-muted small mb-2">Pride &bull; Passion &bull; Workmanship</p>
+                        <p class="text-muted small">Serving Alberta &amp; Western Canada with over 40 years of industry expertise in safety inspections, commissioning, and custom business solutions.</p>
+                    </div>
+                    <!-- Quick Links -->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="text-uppercase text-white mb-3" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em;">Quick Links</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a class="text-muted text-decoration-none" href="#page-top">Home</a></li>
+                            <li class="mb-2"><a class="text-muted text-decoration-none" href="#services">What We Offer</a></li>
+                            <li class="mb-2"><a class="text-muted text-decoration-none" href="#about">Who We Are</a></li>
+                            <li class="mb-2"><a class="text-muted text-decoration-none" href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="col-lg-4 col-md-6">
+                        <h6 class="text-uppercase text-white mb-3" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em;">Get In Touch</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><i class="fas fa-envelope me-2 text-muted"></i><a class="text-muted text-decoration-none" href="mailto:MeisterTrustServices@outlook.com">MeisterTrustServices@outlook.com</a></li>
+                            <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-muted"></i><span class="text-muted">Alberta &amp; Western Canada</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="my-4" style="border-color: rgba(255,255,255,0.1);" />
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-lg-start">Copyright &copy; Meister Trust Services 2025</div>
-                    <div class="col-lg-6 text-lg-end">
-                        <a class="link-dark text-decoration-none" href="mailto:MeisterTrustServices@outlook.com">MeisterTrustServices@outlook.com</a>
+                    <div class="col text-center">
+                        <p class="text-muted small mb-0">Copyright &copy; Meister Trust Services <script>document.write(new Date().getFullYear())</script>. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -576,7 +611,7 @@
         <!-- EmailJS SDK -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts.min.js"></script>
         <!-- Dynamically scale down the entire site below 500px -->
         <script>
         (function() {

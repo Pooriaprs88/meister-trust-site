@@ -132,8 +132,29 @@ EmailJS free tier includes:
 
 ---
 
-**Important Notes:**
-- Never share your EmailJS Public Key, Service ID, or Template ID publicly
-- These credentials are visible in your website's JavaScript (front-end), which is normal for EmailJS
-- If you want extra security, consider upgrading to a paid plan with domain restrictions
+**Important: Securing Your EmailJS Account**
+
+Your EmailJS public key, service ID, and template ID are visible in your website's JavaScript — this is by design (EmailJS is a client-side service). However, without restrictions, anyone who finds these credentials can use your account to send emails. To prevent abuse:
+
+### Add Domain Restrictions (Recommended)
+
+1. Log in to [EmailJS Dashboard](https://dashboard.emailjs.com/)
+2. Go to **Account** → **Security** (or **General**)
+3. Find the **"Allowed Origins"** or **"Domain Restrictions"** setting
+4. Add your production domain: `https://meistertrustservices.com`
+5. Optionally add `http://localhost` for local development
+6. **Save** — now only requests from your domain will be accepted
+
+### Enable Rate Limiting
+
+1. In the EmailJS dashboard, go to your **Email Service** settings
+2. Look for **rate limit** options
+3. Set a reasonable daily/hourly limit (e.g., 20 emails/day) to prevent spam abuse
+
+### Enable reCAPTCHA (Optional, Extra Security)
+
+1. Go to **Email Templates** → your template → **Settings**
+2. Enable **reCAPTCHA** verification
+3. This adds a CAPTCHA check before sending, blocking bots entirely
+4. Note: this requires adding the reCAPTCHA widget to your contact form HTML
 

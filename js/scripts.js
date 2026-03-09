@@ -124,35 +124,3 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
-
-// Toggle service details visibility - make it globally accessible
-window.toggleServiceDetails = function(serviceNumber) {
-    const button = document.getElementById('showMoreBtn' + serviceNumber);
-    if (!button) {
-        console.error('Button not found:', 'showMoreBtn' + serviceNumber);
-        return;
-    }
-    
-    // Find the service item by traversing up the DOM
-    const serviceItem = button.closest('.service-item-enhanced');
-    if (!serviceItem) {
-        console.error('Service item not found');
-        return;
-    }
-    
-    const serviceDetails = serviceItem.querySelector('.service-details');
-    
-    if (serviceDetails) {
-        const isExpanded = serviceDetails.classList.contains('expanded');
-        
-        if (isExpanded) {
-            serviceDetails.classList.remove('expanded');
-            button.textContent = 'Show More';
-        } else {
-            serviceDetails.classList.add('expanded');
-            button.textContent = 'Show Less';
-        }
-    } else {
-        console.error('Service details not found');
-    }
-};
